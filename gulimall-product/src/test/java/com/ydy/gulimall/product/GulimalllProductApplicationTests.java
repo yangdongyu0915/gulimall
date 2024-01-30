@@ -1,13 +1,22 @@
 package com.ydy.gulimall.product;
 
-import org.junit.jupiter.api.Test;
+import com.ydy.gulimall.product.entity.BrandEntity;
+import com.ydy.gulimall.product.service.BrandService;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GulimalllProductApplicationTests {
+public class GulimalllProductApplicationTests {
+    @Autowired
+    BrandService brandService;
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+        BrandEntity brandEntity = new BrandEntity();
+        brandEntity.setName("华为");
+        brandService.save(brandEntity);
+
     }
 
 }
