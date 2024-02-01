@@ -2,17 +2,18 @@ package com.ydy.gulimall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
 
 /**
  * sku信息
  * 
- * @author huanglin
- * @email 2465652971@qq.com
- * @date 2020-07-16 15:28:09
+ * @author ydy
+ * @email 1752510119@qq.com
+ * @date 2024-01-30 21:41:36
  */
 @Data
 @TableName("pms_sku_info")
@@ -39,7 +40,7 @@ public class SkuInfoEntity implements Serializable {
 	/**
 	 * 所属分类id
 	 */
-	private Long catelogId;
+	private Long catalogId;
 	/**
 	 * 品牌id
 	 */

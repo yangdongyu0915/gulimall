@@ -1,17 +1,17 @@
 package com.ydy.gulimall.product.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.ydy.common.utils.PageUtils;
 import com.ydy.gulimall.product.entity.SpuInfoDescEntity;
-import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
 
 /**
  * spu信息介绍
  *
- * @author huanglin
- * @email 2465652971@qq.com
- * @date 2020-07-16 15:28:09
+ * @author ydy
+ * @email 1752510119@qq.com
+ * @date 2024-01-30 21:41:35
  */
 public interface SpuInfoDescService extends IService<SpuInfoDescEntity> {
 

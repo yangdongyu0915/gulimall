@@ -1,23 +1,29 @@
 package com.ydy.gulimall.product.controller;
 
-import com.ydy.common.utils.PageUtils;
-import com.ydy.common.utils.R;
-import com.ydy.gulimall.product.entity.SpuInfoDescEntity;
-import com.ydy.gulimall.product.service.SpuInfoDescService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ydy.gulimall.product.entity.SpuInfoDescEntity;
+import com.ydy.gulimall.product.service.SpuInfoDescService;
+import com.ydy.common.utils.PageUtils;
+import com.ydy.common.utils.R;
 
 
 
 /**
  * spu信息介绍
  *
- * @author huanglin
- * @email 2465652971@qq.com
- * @date 2020-07-16 15:28:09
+ * @author ydy
+ * @email 1752510119@qq.com
+ * @date 2024-01-30 21:41:35
  */
 @RestController
 @RequestMapping("product/spuinfodesc")
@@ -29,6 +35,7 @@ public class SpuInfoDescController {
      * 列表
      */
     @RequestMapping("/list")
+    ////@RequiresPermissions("product:spuinfodesc:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoDescService.queryPage(params);
 
@@ -40,6 +47,7 @@ public class SpuInfoDescController {
      * 信息
      */
     @RequestMapping("/info/{spuId}")
+    ////@RequiresPermissions("product:spuinfodesc:info")
     public R info(@PathVariable("spuId") Long spuId){
 		SpuInfoDescEntity spuInfoDesc = spuInfoDescService.getById(spuId);
 
@@ -50,6 +58,7 @@ public class SpuInfoDescController {
      * 保存
      */
     @RequestMapping("/save")
+    ////@RequiresPermissions("product:spuinfodesc:save")
     public R save(@RequestBody SpuInfoDescEntity spuInfoDesc){
 		spuInfoDescService.save(spuInfoDesc);
 
@@ -60,6 +69,7 @@ public class SpuInfoDescController {
      * 修改
      */
     @RequestMapping("/update")
+    ////@RequiresPermissions("product:spuinfodesc:update")
     public R update(@RequestBody SpuInfoDescEntity spuInfoDesc){
 		spuInfoDescService.updateById(spuInfoDesc);
 
@@ -70,6 +80,7 @@ public class SpuInfoDescController {
      * 删除
      */
     @RequestMapping("/delete")
+    ////@RequiresPermissions("product:spuinfodesc:delete")
     public R delete(@RequestBody Long[] spuIds){
 		spuInfoDescService.removeByIds(Arrays.asList(spuIds));
 
