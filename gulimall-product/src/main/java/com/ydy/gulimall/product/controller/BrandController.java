@@ -16,6 +16,7 @@ import com.ydy.gulimall.product.service.BrandService;
 import com.ydy.common.utils.PageUtils;
 import com.ydy.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -59,7 +60,7 @@ public class BrandController {
      */
     @RequestMapping("/save")
     ////@RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
+    public R save(@RequestBody @Valid BrandEntity brand){
 		brandService.save(brand);
 
         return R.ok();

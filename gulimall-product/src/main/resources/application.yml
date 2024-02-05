@@ -13,10 +13,15 @@ spring:
     url: jdbc:mysql://192.168.3.100:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: localhost:8848
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alicloud:
+      access-key: LTAI5tPvmSC7C7iE9zkMGmhd
+      secret-key: m9wWtf2G3bpSx9Kx4lBDVJCTiEaHpi
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
 #
 #    sentinel:
 #      transport:
@@ -53,9 +58,9 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
-#logging:
-#  level:
-#    com.ydy.gulimall: error
+logging:
+  level:
+    com.ydy.gulimall: debug
 #
 #
 ##暴露所有端点

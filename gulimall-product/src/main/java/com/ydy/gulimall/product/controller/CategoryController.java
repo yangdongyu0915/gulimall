@@ -40,7 +40,7 @@ public class CategoryController {
     public R list(){
         List<CategoryEntity> entities=categoryService.listWithTree();
 
-        return R.ok().put("page", entities);
+        return R.ok().put("data", entities);
     }
 
 
@@ -77,14 +77,23 @@ public class CategoryController {
         return R.ok();
     }
 
+
+    /**
+     * 修改排序
+     */
+    @RequestMapping("/update/sort")
+    ////@RequiresPermissions("product:category:update")
+    public R updateSort(@RequestBody CategoryEntity[] category){
+        categoryService.updateBatchById(Arrays.asList(category));
+        return R.ok();
+    }
     /**
      * 删除
      */
     @RequestMapping("/delete")
     ////@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
-
+		categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
 

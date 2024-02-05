@@ -1,17 +1,15 @@
-package com.ydy.gulimall.product;
+package com.ydy.gulimall.thirdparty;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
-@MapperScan("com.ydy.gulimall.product.dao")
 @EnableDiscoveryClient
-public class GulimallProductApplication {
+@SpringBootApplication
+public class GulimallThirdPartyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GulimallProductApplication.class, args);
+        SpringApplication.run(GulimallThirdPartyApplication.class, args);
     }
 
 }
